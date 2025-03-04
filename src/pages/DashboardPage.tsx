@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { Bell, Plus, ChevronDown, Clock, CheckCircle, AlertTriangle, Wallet } from 'lucide-react';
+import React, { useState } from "react";
+import {
+  Bell,
+  Plus,
+  ChevronDown,
+  Clock,
+  CheckCircle,
+  AlertTriangle,
+  Wallet,
+} from "lucide-react";
 
 const DashboardPage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('transactions');
+  const [activeTab, setActiveTab] = useState("transactions");
   const [showNewTransactionForm, setShowNewTransactionForm] = useState(false);
-  const [transactionAmount, setTransactionAmount] = useState('');
-  const [transactionDescription, setTransactionDescription] = useState('');
-  const [transactionTerms, setTransactionTerms] = useState('');
+  const [transactionAmount, setTransactionAmount] = useState("");
+  const [transactionDescription, setTransactionDescription] = useState("");
+  const [transactionTerms, setTransactionTerms] = useState("");
 
   const handleNewTransaction = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
     setShowNewTransactionForm(false);
     // Reset form
-    setTransactionAmount('');
-    setTransactionDescription('');
-    setTransactionTerms('');
+    setTransactionAmount("");
+    setTransactionDescription("");
+    setTransactionTerms("");
   };
 
   return (
@@ -30,10 +38,12 @@ const DashboardPage: React.FC = () => {
             <div className="relative">
               <button className="p-2 bg-white rounded-full shadow-sm relative">
                 <Bell size={20} className="text-gray-600" />
-                <span className="absolute top-0 right-0 h-4 w-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">3</span>
+                <span className="absolute top-0 right-0 h-4 w-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+                  3
+                </span>
               </button>
             </div>
-            <button 
+            <button
               onClick={() => setShowNewTransactionForm(true)}
               className="px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-800 transition-colors flex items-center"
             >
@@ -57,11 +67,15 @@ const DashboardPage: React.FC = () => {
             <p className="text-2xl font-bold">5</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-gray-500 text-sm mb-2">Completed Transactions</h3>
+            <h3 className="text-gray-500 text-sm mb-2">
+              Completed Transactions
+            </h3>
             <p className="text-2xl font-bold">12</p>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-gray-500 text-sm mb-2">Total Transaction Value</h3>
+            <h3 className="text-gray-500 text-sm mb-2">
+              Total Transaction Value
+            </h3>
             <p className="text-2xl font-bold">ETB 120,500</p>
           </div>
         </div>
@@ -69,32 +83,32 @@ const DashboardPage: React.FC = () => {
         {/* Tabs */}
         <div className="bg-white rounded-lg shadow-md mb-8">
           <div className="flex border-b">
-            <button 
-              onClick={() => setActiveTab('transactions')}
+            <button
+              onClick={() => setActiveTab("transactions")}
               className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'transactions' 
-                  ? 'text-green-700 border-b-2 border-green-700' 
-                  : 'text-gray-500 hover:text-gray-700'
+                activeTab === "transactions"
+                  ? "text-green-700 border-b-2 border-green-700"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Transactions
             </button>
-            <button 
-              onClick={() => setActiveTab('notifications')}
+            <button
+              onClick={() => setActiveTab("notifications")}
               className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'notifications' 
-                  ? 'text-green-700 border-b-2 border-green-700' 
-                  : 'text-gray-500 hover:text-gray-700'
+                activeTab === "notifications"
+                  ? "text-green-700 border-b-2 border-green-700"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Notifications
             </button>
-            <button 
-              onClick={() => setActiveTab('settings')}
+            <button
+              onClick={() => setActiveTab("settings")}
               className={`px-6 py-3 text-sm font-medium ${
-                activeTab === 'settings' 
-                  ? 'text-green-700 border-b-2 border-green-700' 
-                  : 'text-gray-500 hover:text-gray-700'
+                activeTab === "settings"
+                  ? "text-green-700 border-b-2 border-green-700"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
             >
               Settings
@@ -102,7 +116,7 @@ const DashboardPage: React.FC = () => {
           </div>
 
           {/* Transactions Tab Content */}
-          {activeTab === 'transactions' && (
+          {activeTab === "transactions" && (
             <div className="p-6">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">Your Transactions</h2>
@@ -130,11 +144,15 @@ const DashboardPage: React.FC = () => {
                         </span>
                       </div>
                       <h3 className="font-medium">Purchase of iPhone 13 Pro</h3>
-                      <p className="text-sm text-gray-500">Transaction ID: #ETH12345</p>
+                      <p className="text-sm text-gray-500">
+                        Transaction ID: #ETH12345
+                      </p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">ETB 45,000</p>
-                      <p className="text-sm text-gray-500">Created: May 15, 2025</p>
+                      <p className="text-sm text-gray-500">
+                        Created: May 15, 2025
+                      </p>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
@@ -157,17 +175,24 @@ const DashboardPage: React.FC = () => {
                           Completed
                         </span>
                       </div>
-                      <h3 className="font-medium">Website Development Services</h3>
-                      <p className="text-sm text-gray-500">Transaction ID: #ETH12344</p>
+                      <h3 className="font-medium">
+                        Website Development Services
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Transaction ID: #ETH12344
+                      </p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">ETB 25,000</p>
-                      <p className="text-sm text-gray-500">Completed: May 10, 2025</p>
+                      <p className="text-sm text-gray-500">
+                        Completed: May 10, 2025
+                      </p>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
                     <div className="text-sm">
-                      <span className="text-gray-500">Seller:</span> Tech Solutions Ltd
+                      <span className="text-gray-500">Seller:</span> Tech
+                      Solutions Ltd
                     </div>
                     <button className="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors">
                       View Details
@@ -185,17 +210,24 @@ const DashboardPage: React.FC = () => {
                           Disputed
                         </span>
                       </div>
-                      <h3 className="font-medium">Used Toyota Corolla (2018)</h3>
-                      <p className="text-sm text-gray-500">Transaction ID: #ETH12343</p>
+                      <h3 className="font-medium">
+                        Used Toyota Corolla (2018)
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        Transaction ID: #ETH12343
+                      </p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold">ETB 850,000</p>
-                      <p className="text-sm text-gray-500">Disputed: May 5, 2025</p>
+                      <p className="text-sm text-gray-500">
+                        Disputed: May 5, 2025
+                      </p>
                     </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
                     <div className="text-sm">
-                      <span className="text-gray-500">Seller:</span> Addis Auto Dealers
+                      <span className="text-gray-500">Seller:</span> Addis Auto
+                      Dealers
                     </div>
                     <button className="px-3 py-1 text-sm bg-red-100 text-red-700 rounded-md hover:bg-red-200 transition-colors">
                       Resolve Dispute
@@ -207,23 +239,36 @@ const DashboardPage: React.FC = () => {
           )}
 
           {/* Notifications Tab Content */}
-          {activeTab === 'notifications' && (
+          {activeTab === "notifications" && (
             <div className="p-6">
               <h2 className="text-lg font-semibold mb-4">Notifications</h2>
               <div className="space-y-4">
                 <div className="p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg">
-                  <p className="font-medium">Transaction #ETH12345 is awaiting your approval</p>
-                  <p className="text-sm text-gray-600 mt-1">The seller has marked the item as delivered. Please inspect and approve.</p>
+                  <p className="font-medium">
+                    Transaction #ETH12345 is awaiting your approval
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    The seller has marked the item as delivered. Please inspect
+                    and approve.
+                  </p>
                   <p className="text-xs text-gray-500 mt-2">2 hours ago</p>
                 </div>
                 <div className="p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg">
-                  <p className="font-medium">Funds released for transaction #ETH12344</p>
-                  <p className="text-sm text-gray-600 mt-1">The escrow funds have been successfully released to the seller.</p>
+                  <p className="font-medium">
+                    Funds released for transaction #ETH12344
+                  </p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    The escrow funds have been successfully released to the
+                    seller.
+                  </p>
                   <p className="text-xs text-gray-500 mt-2">2 days ago</p>
                 </div>
                 <div className="p-4 border-l-4 border-blue-500 bg-blue-50 rounded-r-lg">
                   <p className="font-medium">New message from Dawit Haile</p>
-                  <p className="text-sm text-gray-600 mt-1">Regarding transaction #ETH12345: "The item will be delivered tomorrow."</p>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Regarding transaction #ETH12345: "The item will be delivered
+                    tomorrow."
+                  </p>
                   <p className="text-xs text-gray-500 mt-2">3 days ago</p>
                 </div>
               </div>
@@ -231,66 +276,108 @@ const DashboardPage: React.FC = () => {
           )}
 
           {/* Settings Tab Content */}
-          {activeTab === 'settings' && (
+          {activeTab === "settings" && (
             <div className="p-6">
               <h2 className="text-lg font-semibold mb-4">Account Settings</h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-md font-medium mb-2">Personal Information</h3>
+                  <h3 className="text-md font-medium mb-2">
+                    Personal Information
+                  </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Full Name</label>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border border-gray-300 rounded-md" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border border-gray-300 rounded-md"
                         defaultValue="Abebe Kebede"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Email Address</label>
-                      <input 
-                        type="email" 
-                        className="w-full p-2 border border-gray-300 rounded-md" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        className="w-full p-2 border border-gray-300 rounded-md"
                         defaultValue="abebe.kebede@example.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">Phone Number</label>
-                      <input 
-                        type="tel" 
-                        className="w-full p-2 border border-gray-300 rounded-md" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        className="w-full p-2 border border-gray-300 rounded-md"
                         defaultValue="+251911234567"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-gray-600 mb-1">City</label>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border border-gray-300 rounded-md" 
+                      <label className="block text-sm text-gray-600 mb-1">
+                        City
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full p-2 border border-gray-300 rounded-md"
                         defaultValue="Addis Ababa"
                       />
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
-                  <h3 className="text-md font-medium mb-2">Notification Preferences</h3>
+                  <h3 className="text-md font-medium mb-2">
+                    Notification Preferences
+                  </h3>
                   <div className="space-y-2">
                     <div className="flex items-center">
-                      <input type="checkbox" id="email_notif" className="mr-2" defaultChecked />
-                      <label htmlFor="email_notif" className="text-sm text-gray-600">Email Notifications</label>
+                      <input
+                        type="checkbox"
+                        id="email_notif"
+                        className="mr-2"
+                        defaultChecked
+                      />
+                      <label
+                        htmlFor="email_notif"
+                        className="text-sm text-gray-600"
+                      >
+                        Email Notifications
+                      </label>
                     </div>
                     <div className="flex items-center">
-                      <input type="checkbox" id="sms_notif" className="mr-2" defaultChecked />
-                      <label htmlFor="sms_notif" className="text-sm text-gray-600">SMS Notifications</label>
+                      <input
+                        type="checkbox"
+                        id="sms_notif"
+                        className="mr-2"
+                        defaultChecked
+                      />
+                      <label
+                        htmlFor="sms_notif"
+                        className="text-sm text-gray-600"
+                      >
+                        SMS Notifications
+                      </label>
                     </div>
                     <div className="flex items-center">
-                      <input type="checkbox" id="app_notif" className="mr-2" defaultChecked />
-                      <label htmlFor="app_notif" className="text-sm text-gray-600">In-App Notifications</label>
+                      <input
+                        type="checkbox"
+                        id="app_notif"
+                        className="mr-2"
+                        defaultChecked
+                      />
+                      <label
+                        htmlFor="app_notif"
+                        className="text-sm text-gray-600"
+                      >
+                        In-App Notifications
+                      </label>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="pt-4 border-t border-gray-200">
                   <button className="px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-800 transition-colors">
                     Save Changes
@@ -308,21 +395,21 @@ const DashboardPage: React.FC = () => {
           <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">New Transaction</h2>
-              <button 
+              <button
                 onClick={() => setShowNewTransactionForm(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
-                <X size={20} />
+                {/* <X size={20} /> */}
               </button>
             </div>
-            
+
             <form onSubmit={handleNewTransaction}>
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Transaction Amount (ETB)
                 </label>
-                <input 
-                  type="number" 
+                <input
+                  type="number"
                   value={transactionAmount}
                   onChange={(e) => setTransactionAmount(e.target.value)}
                   className="w-full p-2 border border-gray-300 rounded-md"
@@ -330,12 +417,12 @@ const DashboardPage: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Description
                 </label>
-                <input 
+                <input
                   type="text"
                   value={transactionDescription}
                   onChange={(e) => setTransactionDescription(e.target.value)}
@@ -344,12 +431,12 @@ const DashboardPage: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Transaction Terms
                 </label>
-                <textarea 
+                <textarea
                   value={transactionTerms}
                   onChange={(e) => setTransactionTerms(e.target.value)}
                   className="w-full p-2 border border-gray-300 rounded-md"
@@ -358,28 +445,28 @@ const DashboardPage: React.FC = () => {
                   required
                 />
               </div>
-              
+
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Counterparty Email or Phone
                 </label>
-                <input 
+                <input
                   type="text"
                   className="w-full p-2 border border-gray-300 rounded-md"
                   placeholder="Enter email or phone number"
                   required
                 />
               </div>
-              
+
               <div className="flex justify-end space-x-2">
-                <button 
+                <button
                   type="button"
                   onClick={() => setShowNewTransactionForm(false)}
                   className="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
                 >
                   Cancel
                 </button>
-                <button 
+                <button
                   type="submit"
                   className="px-4 py-2 text-sm font-medium text-white bg-green-700 rounded-md hover:bg-green-800 transition-colors"
                 >
